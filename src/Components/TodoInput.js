@@ -1,18 +1,20 @@
 import React from 'react'
-import { useState } from 'react'
+import { useContext } from 'react'
 import postData from '../Services/postData'
+import {TodoContext} from '../Contexts/TodoContext'
 
 const TodoInput = () => {
 
-    const [todoTask, setTodoTask] = useState("")
+    const { todoTask, setTodoTask } = useContext(TodoContext);
    
+
     const todoCall = (e) => {
         e.preventDefault()
         const data = {
             todoTask: todoTask
         }
         postData('/todos', data)
-        
+        setTodoTask("")
     }
 
     return (
