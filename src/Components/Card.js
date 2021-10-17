@@ -2,13 +2,13 @@ import React from 'react'
 
 
 
-const Card = ({todo , todoid}) => {
+const Card = ({todo , todoid, onClick}) => {
 
     return (
         <div className = "todo-card">
             <h3 className = "todos">{todo}</h3>
             <div className = "complete">
-                <button></button>
+                <button onClick ={onClick}></button>
             </div>
         </div>
     )
